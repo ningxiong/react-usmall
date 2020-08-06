@@ -1,24 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { Route, Redirect } from 'react-router-dom';
+import lazy from './util/lazy'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Route path='/login' component={lazy(()=>import('./pages/login/login'))}></Route>
+      <Route path='/reg' component={lazy(()=>import('./pages/reg/reg'))}></Route>
+      <Route path='/index' component={lazy(()=>import('./pages/index/index'))}></Route>
+      <Redirect to="/login"></Redirect>
     </div>
   );
 }

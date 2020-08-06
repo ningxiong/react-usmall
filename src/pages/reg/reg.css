@@ -1,0 +1,40 @@
+.reg .head{
+    background-color: orange;
+    height: 1rem;
+    width: 100vw;
+    text-align: center;
+    line-height: 1rem;
+    position: relative;
+    color: #fff;
+    font-size: .4rem;
+}
+.reg .head .btn{
+    position: absolute;
+    left: .1rem;
+    top: 0;
+    height: 100%;
+    line-height: 1rem;
+}
+.reg .body{
+    width: 90vw;
+    margin: 1rem auto;
+}
+.reg .body li{
+    padding: .5rem 0;
+    border-bottom: .01rem solid #ccc;
+}
+
+.reg .body li:nth-child(4){
+    border: none;
+}
+.reg .body li:nth-child(4) button{
+    width: 100%;
+    height: 1rem;
+    background-color: orange;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+}
+.reg .body input{
+    border: none;
+}
