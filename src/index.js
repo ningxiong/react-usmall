@@ -5,11 +5,18 @@ import App from './App';
 import './assets/css/reset.css'
 import "./assets/js/rem.js"
 
-// React.Component.prototype.$img = 'http://localhost:3000'
 
-import {HashRouter} from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './store/index'
+
+React.Component.prototype.$img = 'http://localhost:3000'
+
 ReactDOM.render(
-  <HashRouter><App /></HashRouter>
+  <Provider store={store}>
+    <HashRouter><App /></HashRouter>
+  </Provider>
+
   ,
   document.getElementById('root')
 );

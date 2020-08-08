@@ -1,0 +1,25 @@
+.am-carousel{
+    height: 3rem !important;
+    touch-action: none;
+}
+
+.slider-frame,.slider-list{
+    height: 100% !important;
+}
+.am-carousel img{
+    height: 3rem;
+    width: 100%;
+}
+.slider-decorator-0,.am-carousel-wrap,.am-carousel-wrap-dot{
+    height: .5rem;
+}
+.am-carousel-wrap-dot{
+    width: .4rem;
+    display: inline-block;
+}
+.am-carousel-wrap-dot span{
+    display: inline-block;
+    width: .2rem !important;
+    height: .2rem !important;
+    border-radius: 50%;
+}

@@ -22,3 +22,25 @@ export const requestReg = (data)=>{
         data:qs.stringify(data)
     })
 }
+
+export const requestBanner = ()=>{
+    return axios({
+        url:'/api/getbanner',
+        method:'get',
+    })
+}
+
+export const requestGoods = ()=>{
+    return axios({
+        url:'/api/getindexgoods',
+        method:'get',
+    })
+}
+
+export const requestDetail = (params)=>{
+    return axios({
+        url:'/api/getgoodsinfo',
+        method:'get',
+        params
+    })
+}

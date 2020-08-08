@@ -1,15 +1,20 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import MyRouter from './pages/myRouter/myRouter'
 import lazy from './util/lazy'
-function App() {
-  return (
-    <div className="App">
-      <Route path='/login' component={lazy(()=>import('./pages/login/login'))}></Route>
-      <Route path='/reg' component={lazy(()=>import('./pages/reg/reg'))}></Route>
-      <Route path='/index' component={lazy(()=>import('./pages/index/index'))}></Route>
-      <Redirect to="/login"></Redirect>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Route path='/login' component={lazy(() => import('./pages/login/login'))}></Route>
+        <Route path='/reg' component={lazy(() => import('./pages/reg/reg'))}></Route>
+        <MyRouter path='/index' component={lazy(() => import('./pages/index/index'))}></MyRouter>
+        <MyRouter path='/goodsDetail' component={lazy(() => import('./pages/goodsDetail/goodDetail'))}></MyRouter>
+        <Redirect to="/login"></Redirect>
+      </div>
+    );
+  }
+
 }
 
 export default App;

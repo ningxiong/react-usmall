@@ -1,0 +1,35 @@
+.goods .goods-list li{
+    display: flex !important;
+    margin: .5rem 0;
+    padding: 0 .2rem;
+}
+
+.goods .goods-list li img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: .2rem;
+    margin-right: .4rem;
+}
+
+.goods .goods-list li .right p{
+    font-size: .4rem;
+}
+.goods .goods-list li .right p:first-child{
+    margin-top: .1rem;
+    margin-bottom: .3rem;
+}
+.goods .goods-list li .right p:nth-child(2){
+    color: orangered;
+}
+.goods .goods-list li .right button{
+    width: 2rem;
+    background: orange;
+    line-height: .8rem;
+    height: .8rem;
+    border: none;
+    border-radius: .15rem;
+    color: #fff;
+}
+.goods .goods-list li:last-child{
+    margin-bottom: 1.5rem;
+}

@@ -1,0 +1,20 @@
+.head{
+    height: 1.2rem;
+    line-height: 1.2rem;
+    width: 100vw;
+    padding: .2rem;
+    box-sizing: border-box;
+}
+
+.head input{
+    vertical-align: .22rem;
+    width: 2rem;
+    text-align: center;
+    border: none;
+    background-color: #ccc;
+    border-radius: .3rem;
+    line-height: .6rem;
+    color: #111;
+    margin-left: 1rem;
+    padding-left: .25rem;
+}
