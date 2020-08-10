@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { detail, changeDetailAc } from '../../store';
 import Goback from '../../components/goBack'
 import { filterPrice } from '../../filter';
+
+import Mask from './components/mask'
 class GoodsDetail extends React.Component {
     componentDidMount() {
         let arr = this.props.location.search.slice(1).split('&')
@@ -14,6 +16,13 @@ class GoodsDetail extends React.Component {
         })
         //请求
         this.props.changeDetailAc(id.id)
+    }
+
+    show(){
+        this.refs.show.setState({
+            ...this.refs.show.state,
+            show:!this.refs.show.state.show
+        })
     }
     render() {
         const { detail } = this.props
@@ -50,8 +59,9 @@ class GoodsDetail extends React.Component {
                         <div dangerouslySetInnerHTML={{ __html: detail.description}} />
                 </div>
                 <div className="footer">
-                    <span>加入购物车</span>
+                    <span onClick={()=>this.show()}>加入购物车</span>
                 </div>
+                <Mask detail={detail} ref="show"></Mask>
             </div>
         )
     }

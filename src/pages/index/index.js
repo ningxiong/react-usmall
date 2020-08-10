@@ -25,7 +25,11 @@ class Index extends React.Component {
     componentDidMount() {
         this.props.changeBannerAc()
         this.props.changeGoodsAc()
-
+        if(this.props.location.pathname==='/index/fenlei'){
+            this.setState({
+                num:1
+            })
+        }
     }
 
     sel(num) {
@@ -34,7 +38,6 @@ class Index extends React.Component {
         })
     }
     render() {
-
         return (
             <div className="index">
 

@@ -10,6 +10,7 @@ class App extends React.Component {
         <Route path='/reg' component={lazy(() => import('./pages/reg/reg'))}></Route>
         <MyRouter path='/index' component={lazy(() => import('./pages/index/index'))}></MyRouter>
         <MyRouter path='/goodsDetail' component={lazy(() => import('./pages/goodsDetail/goodDetail'))}></MyRouter>
+        <MyRouter path='/fenleiDetail/:id/:name' component={lazy(() => import('./pages/fenleiDetail/fenleiDetail'))}></MyRouter>
         <Redirect to="/login"></Redirect>
       </div>
     );

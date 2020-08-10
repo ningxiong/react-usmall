@@ -7,6 +7,7 @@
     position: relative;
     color: #fff;
     font-size: .4rem;
+    padding: 0;
 }
 .reg .head .btn{
     position: absolute;

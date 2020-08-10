@@ -1,0 +1,22 @@
+.right img{
+    width: 2rem;
+    height: 2rem;
+    border: .02rem solid blue;
+    border-radius: .2rem;
+}
+.right div {
+    display: inline-block;
+    position: relative;
+    margin: .2rem .15rem;
+}
+.right div span{
+    position: absolute;
+    left: .02rem;
+    bottom: .08rem;
+    background-color: #1d84a7;
+    width: 2rem;
+    height: .5rem;
+    text-align: center;
+    line-height: .5rem;
+    border-radius: 0 0 .2rem .2rem;
+}

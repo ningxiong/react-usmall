@@ -1,0 +1,13 @@
+
+.left ul li{
+    width: 2.5rem;
+    height: 1rem;
+    border-left: .1rem solid transparent;
+    text-align: center;
+    line-height: 1rem;
+    box-sizing: border-box;
+}
+
+.left ul .sel{
+    border-left: .1rem solid skyblue;
+}

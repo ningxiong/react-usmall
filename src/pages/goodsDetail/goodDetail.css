@@ -35,6 +35,14 @@
     margin-bottom: .4rem;
 }
 
+.goodsDetail .des ul li:first-child{
+    justify-content: space-between;
+}
+.goodsDetail .des ul li:first-child p{
+    margin-right: .2rem;
+    border-left: .01rem solid #ccc;
+    padding: .1rem;
+}
 .goodsDetail .des ul li span{
     line-height: .6rem;
     font-size: .4rem;
