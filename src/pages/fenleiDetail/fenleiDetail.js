@@ -26,7 +26,7 @@ class FenleiDetail extends React.Component {
                                 <div className="rig">
                                     <p>{item.goodsname}</p>
                                     <p>￥{filterPrice(item.price)}</p>
-                                    <button>立即抢购</button>
+                                    <button >立即抢购</button>
                                 </div>
                             </div>
                         )
@@ -48,9 +48,3 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(FenleiDetail)
-
-/* goodsname: "海信冰箱"
-id: 18
-img: "/uploads/adcb70f0-d581-11ea-9a8a-2b73d33dd399.jpg"
-market_price: 5999
-price: 4999 */

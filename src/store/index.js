@@ -8,7 +8,7 @@ let initState = {
     detail: {},
     fenlei: [],
     fenleiDetail: [],
-    shopCarList: []
+    shopCarList: [],
 }
 
 
@@ -106,8 +106,15 @@ const changeFenleiDetail = (json) => {
 export const changeFenleiDetailAc = (id) => {
     return (dispatch, getState) => {
         //多次请求问题
+        if(getState().fenleiDetail&&getState().fenleiDetail.length>0&&id===getState().fenleiDetail[0].aa){
+            return
+        }
         requestFenleiDetail({ fid: id }).then(res => {
-            dispatch(changeFenleiDetail(res.data.list))
+            const {list} = res.data
+            if(list&&list.length>0){
+                list[0].aa = id
+            }
+            dispatch(changeFenleiDetail(list))
         })
     }
 
@@ -124,7 +131,7 @@ const changeShopCar = (arr) => {
 
 export const changeShopCarAc = (id) => {
     return (dispatch, getState) => {
-        requestShopCar({uid:id}).then(res => {
+        requestShopCar({ uid: id }).then(res => {
             dispatch(changeShopCar(res.data.list))
         })
     }
@@ -163,6 +170,7 @@ function Reducer(state = initState, action) {
                 ...state,
                 shopCarList: action.payload
             }
+        
         default: return state
     }
 }

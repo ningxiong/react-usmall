@@ -24,8 +24,14 @@
     margin-right: .2rem;
 }
 .shopCar .con li .info{
+    position: relative;
     display: flex;
     text-align: center;
+    width:8.2rem;
+    transition: all 0.3s;
+}
+.edit{
+    margin-left: -1.2rem;
 }
 .shopCar input{
     width: .5rem;
@@ -52,7 +58,9 @@
     vertical-align: middle;
     margin-right: .2rem;
 }
-
+.shopCar .con li .info .des{
+    width: 2.3rem;
+}
 .shopCar .con li .info .des i{
     font-style: normal;
     display: inline-block;
@@ -80,7 +88,19 @@
     margin-left: .4rem;
     margin-top: .5rem;
 }
-
+.shopCar .con li .info .del{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+.shopCar .con li .info .del button{
+    border: none;
+    background-color: orange;
+    color: #fff;
+    width: 1.2rem;
+    height: 80%;
+}
 .shopCar{
     padding-bottom: 2.5rem !important;
 }

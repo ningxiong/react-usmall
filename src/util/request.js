@@ -85,3 +85,11 @@ export const requestShopCarEdit = (data)=>{
         data:qs.stringify(data)
     })
 }
+
+export const requestShopCarDel = (data)=>{
+    return axios({
+        url:'/api/cartdelete',
+        method:'post',
+        data:qs.stringify(data)
+    })
+}

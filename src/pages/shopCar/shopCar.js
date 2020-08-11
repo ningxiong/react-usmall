@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 import { changeShopCarAc, shopCarList } from '../../store';
 import storeImg from '../../assets/img/store.png'
 import { filterPrice } from '../../filter'
-import { requestShopCarEdit } from '../../util/request'
+import { requestShopCarEdit, requestShopCarDel } from '../../util/request'
 class ShopCar extends React.Component {
     constructor() {
         super()
         this.state = {
             allSel: false,
-            sum: 0
+            sum: 0,
+            isEdit: false
         }
     }
     arr = []
@@ -31,6 +32,7 @@ class ShopCar extends React.Component {
                 if (item) {
                     selAc.push(index)
                 }
+                return index
             })
             let sum = 0
             selAc.forEach(item => {
@@ -53,6 +55,7 @@ class ShopCar extends React.Component {
                 if (item) {
                     selAc.push(index)
                 }
+                return index
             })
             let sum = 0
             selAc.forEach(item => {
@@ -76,6 +79,7 @@ class ShopCar extends React.Component {
             if (item) {
                 selAc.push(index)
             }
+            return index
         })
         let sum = 0
         selAc.forEach(item => {
@@ -94,17 +98,33 @@ class ShopCar extends React.Component {
             if (item) {
                 selAc.push(index)
             }
+            return index
         })
         let sum = 0
         selAc.forEach(item => {
             sum += this.props.shopCarList[item].num * this.props.shopCarList[item].price
         })
+        
         this.setState({
             ...this.state,
             sum
         })
     }
-
+    edit() {
+        this.setState({
+            ...this.state,
+            isEdit: !this.state.isEdit
+        })
+    }
+    del(id) {
+        requestShopCarDel({ id: id }).then(res => {
+            if (res.data.code === 200) {
+                alert('删除成功')
+                this.arr.splice(0,1)
+                this.props.changeShopCarAc(this.uid)
+            }
+        })
+    }
     render() {
         const { shopCarList } = this.props
         return (
@@ -123,7 +143,7 @@ class ShopCar extends React.Component {
                                 return (
                                     <li key={item.id}>
                                         <h3><img src={storeImg} alt="" />杭州保税区仓</h3>
-                                        <div className="info">
+                                        <div className={this.state.isEdit ? "info edit" : 'info'}>
                                             <input type="checkbox" checked={this.arr[index]} onChange={() => this.check(index)} />
                                             {
                                                 shopCarList.length > 0 ? <img src={shopCarList[index].img} alt="" /> : null
@@ -136,6 +156,9 @@ class ShopCar extends React.Component {
                                                 <p>总价：{filterPrice(item.num * item.price)}</p>
                                             </div>
                                             <p>{filterPrice(item.price)}</p>
+                                            <div className="del">
+                                                <button onClick={() => this.del(item.id)}>删除</button>
+                                            </div>
                                         </div>
                                     </li>
                                 )
@@ -150,7 +173,7 @@ class ShopCar extends React.Component {
                         <p>全选</p>
                     </div>
                     <div className='edit'>
-                        <input type="checkbox" />
+                        <input type="checkbox" checked={this.state.isEdit} onChange={() => this.edit()} />
                         <p>编辑</p>
                     </div>
                     <div className="sum">
