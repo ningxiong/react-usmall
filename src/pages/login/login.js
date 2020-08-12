@@ -16,6 +16,7 @@ export default class Login extends React.Component {
             if (res.data.code === 200) {
                 alert(res.data.msg)
                 sessionStorage.setItem('islogin', 1)
+                sessionStorage.setItem('token',res.data.list.token)
                 sessionStorage.setItem('uid',res.data.list.uid)
                 this.props.history.push('/index')
             } else {

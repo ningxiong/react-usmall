@@ -87,7 +87,7 @@ class ShopCar extends React.Component {
         })
         this.setState({
             allSel: allCheck,
-            sum
+            sum,
         })
 
     }
@@ -107,7 +107,8 @@ class ShopCar extends React.Component {
         
         this.setState({
             ...this.state,
-            sum
+            sum,
+            allSel:this.arr.every(item=>item)
         })
     }
     edit() {

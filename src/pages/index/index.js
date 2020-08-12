@@ -1,5 +1,5 @@
 import React from 'react'
-
+import MyRouter from '../myRouter/myRouter'
 
 import indexImgAc from '../../assets/img/tab_home_hig.png'
 import fenleiImgAc from '../../assets/img/tab_menu_hig.png'
@@ -13,7 +13,7 @@ import './index.css'
 
 import { connect } from 'react-redux'
 import { changeBannerAc, changeGoodsAc } from '../../store'
-import { Switch, Redirect, Route, NavLink } from 'react-router-dom'
+import { Switch, Redirect, NavLink } from 'react-router-dom'
 import lazy from '../../util/lazy'
 class Index extends React.Component {
     constructor() {
@@ -42,10 +42,10 @@ class Index extends React.Component {
             <div className="index">
 
                 <Switch>
-                    <Route path="/index/home" component={lazy(() => import('../home/home'))} ></Route>
-                    <Route path='/index/fenlei' component={lazy(() => import('../fenlei/fenlei'))}></Route>
-                    <Route path='/index/shopCar' component={lazy(() => import('../shopCar/shopCar'))}></Route>
-                    <Route path='/index/mine' component={lazy(() => import('../mine/mine'))}></Route>
+                    <MyRouter path="/index/home" component={lazy(() => import('../home/home'))} ></MyRouter>
+                    <MyRouter path='/index/fenlei' component={lazy(() => import('../fenlei/fenlei'))}></MyRouter>
+                    <MyRouter path='/index/shopCar' component={lazy(() => import('../shopCar/shopCar'))}></MyRouter>
+                    <MyRouter path='/index/mine' component={lazy(() => import('../mine/mine'))}></MyRouter>
                     <Redirect to='/index/home'></Redirect>
                 </Switch>
                 <div className="footer">
